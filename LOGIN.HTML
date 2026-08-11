@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern User Details Form</title>
+    <style>
+        /* Modern Glassmorphism & Gradient Background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4, #10b981);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Animation for Background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glass Form Container */
+        .form-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            max-width: 550px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Title */
+        h1 {
+            color: #1e293b;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Grid - Two Column Layout for neatness */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* Input Grouping */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #475569;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Modern Input Styling */
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #ffffff;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            outline: none;
+        }
+
+        textarea {
+            height: 70px;
+            resize: none;
+        }
+
+        /* Gender Radio Customization */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            height: 45px;
+        }
+
+        .radio-group label {
+            text-transform: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Action Buttons Grid */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        input[type="reset"],
+        input[type="button"] {
+            flex: 1;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Clear Button */
+        input[type="reset"] {
+            background-color: #f1f5f9;
+            color: #64748b;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        /* Next Button */
+        .btn-next {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Back Button */
+        .btn-back {
+            background: #94a3b8;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background: #78869b;
+        }
+
+        /* Link Wrappers */
+        a {
+            text-decoration: none;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <h1>User Details Form</h1>
+
+        <form action="shopping.html" method="post">
+            <div class="form-grid">
+                
+                <div class="input-group full-width">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" required placeholder="John Doe">
+                </div>
+
+                <div class="input-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dob">
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="+91 9876543210">
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="example@mail.com">
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Address</label>
+                    <textarea name="address" placeholder="Enter your full address"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>City</label>
+                    <input type="text" name="city">
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <input type="text" name="state">
+                </div>
+
+                <div class="input-group">
+                    <label>Pincode</label>
+                    <input type="text" name="pincode">
+                </div>
+
+                <div class="input-group">
+                    <label>Country</label>
+                    <select name="country">
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Canada</option>
+                        <option>Australia</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="button-group">
+                <input type="reset" value="Clear">
+                
+                <a href="file:///Z:/HTML/Shopping%20.html">
+                    <input type="button" value="Next" class="btn-next">
+                </a>
+                
+                <a href="file:///Z:/HTML/FRONT.HTML?">
+                    <input type="button" value="Back" class="btn-back">
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Video Page</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1b2a, #415a77);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main Container Card */
+        .product-container {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+            color: #e0e1dd;
+            font-size: 2.5rem;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #778da9;
+            width: 80px;
+            margin: 10px auto 30px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            color: #778da9;
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        p {
+            color: #a9d6e5;
+            margin-bottom: 25px;
+        }
+
+        /* Video Player Styling */
+        video {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            margin-bottom: 35px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Table Styling */
+        table {
+            width: 80%;
+            margin: 0 auto 35px;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e1dd;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #a9d6e5;
+            font-weight: 600;
+        }
+
+        /* Next Button Styling */
+        .next-btn {
+            background-color: #4361ee;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+        }
+
+        .next-btn:hover {
+            background-color: #4895ef;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(72, 149, 239, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <h1>Product Video Page</h1>
+        <hr>
+        <h3>Product Name: Smart Phone</h3>
+        <p>Watch the product demonstration video before purchasing.</p>
+
+        <video controls>
+            <source src="phone.mp4" type="video/mp4"> 
+            Your browser does not support the video tag.
+        </video>
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Brand</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Smart Phone</td>
+                <td>Oppo A3 Pro</td>
+                <td>₹25,999</td>
+            </tr>
+        </table>
+
+        <a href="logout.html"> 
+            <button class="next-btn">Next</button>
+        </a>
+    </div>
+
+</body>
+</html>

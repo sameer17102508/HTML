@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Details</title>
+    <style>
+        /* General Page Styles */
+        body {
+            background-color: #e0f2fe;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form Container Card */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        /* Layout Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px 8px;
+            vertical-align: top;
+        }
+
+        /* Labels styling (Left Column) */
+        td:first-child {
+            font-weight: 600;
+            color: #475569;
+            width: 35%;
+            padding-top: 18px;
+        }
+
+        /* Input Fields Styling */
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Special Inputs */
+        input[type="color"] {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            width: 50px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        input[type="file"] {
+            font-size: 14px;
+            padding-top: 5px;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            line-height: 1.8;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+            transform: scale(1.1);
+            vertical-align: middle;
+        }
+
+        /* Buttons Styling */
+        .btn-container {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        input[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        input[type="reset"] {
+            background-color: #f1f5f9;
+            color: #475569;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e2e8f0;
+        }
+
+        .btn-back {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background-color: #64748b;
+        }
+
+        /* Remove underline from links wrapping buttons */
+        a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Purchase Details</h2>
+    <form action="success.html" method="post">
+        <table>
+            <tr>
+                <td>Customer Name</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="tel" name="phone" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Delivery Address</td>
+                <td><textarea name="address" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td><input type="text" name="pincode"></td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td>
+                    <select name="product">
+                        <option>Smart Phone</option>
+                        <option>Laptop</option>
+                        <option>School Bag</option>
+                        <option>Wallet</option>
+                        <option>Shirt</option>
+                        <option>Shoes</option>
+                        <option>Watch</option>
+                        <option>Headphone</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input type="number" name="quantity" min="1" max="10"></td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td><input type="color" name="color" value="#3b82f6"></td>
+            </tr>
+            <tr>
+                <td>Payment Method</td>
+                <td class="radio-group">
+                    <label><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</label><br>
+                    <label><input type="radio" name="payment" value="Credit Card"> Credit Card</label><br>
+                    <label><input type="radio" name="payment" value="Debit Card"> Debit Card</label><br>
+                    <label><input type="radio" name="payment" value="UPI"> UPI</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload Payment Screenshot</td>
+                <td><input type="file" name="paymentproof"></td>
+            </tr>
+            <tr>
+                <td>Additional Comments</td>
+                <td><textarea name="comments" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <a href="file:///Z:/HTML/logout.html">
+                    <input type="submit" value="Confirm Purchase" class="btn-next">
+                    <input type="reset" value="Clear Form">
+                    <a href="file:///Z:/HTML/Shopping%20.html">
+                        <input type="button" value="Back to Shopping" class="btn-back">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
